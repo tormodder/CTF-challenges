@@ -1,0 +1,1 @@
+Alright so it might have been a bad idea to give that much information to the user. I've learned from my mistakes (I hope!) and this time I've hidden some information from the browser.

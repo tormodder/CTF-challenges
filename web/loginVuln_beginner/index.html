@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Login Vuln!</Title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <form id="loginForm" action="login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Login">
+        </form>
+
+        <div id="message"></div> <!-- Container to display messages -->
+        
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+        
+                // Prevent caching
+                formData.append("timestamp", new Date().getTime());
+        
+                fetch('login.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = 'success.php'; 
+                    } else {
+                        var message = 'Login failed';
+                        if (data.sql) {
+                            
+                            // Escape the SQL content to display it as text
+                            var escapedSQL = data.sql.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        
+                            // Highlight the SQL comments in red
+                            escapedSQL = escapedSQL.replace(/(--.*)/g, '<span style="color: red;">$1</span>');
+        
+                            message += '<br>SQL Query: ' + escapedSQL;
+                        }
+                        document.getElementById('message').innerHTML = message;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        </script>
+        
+        
+    </body>
+</html>

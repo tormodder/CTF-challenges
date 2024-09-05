@@ -1,0 +1,1 @@
+I love ricing linux. It's so satisfying to see icons for programming languages and other services appear seamlessly in the terminal. All you need is the right font and some unicode.

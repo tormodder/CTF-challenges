@@ -1,0 +1,5 @@
+The killswitch for the 2017 ransomware WannaCry was a hardcoded url. The virus would attempt to ping this url, and if it was unable to reach it, it would continue infecting the host. Conversely if the url responded, meaning the domain was registered, the infection would not proceed. This was intended to give the threat actors behind the attack the capability to stop the attack at will. Instead a security researcher reverse engineered the malware during the attack, discovered the url, registered it and effectively stopped the continued spread of WannaCry.
+
+If you go to this url today you see it has been sinkholed by a specific company, what is the name of that company? And what is the name of the researcher that initially discovered the killswitch?
+
+Flag format: CTFkom{company_name_researcher_name}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>profile</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Hi {{ user.username }}</h1>
+        <p>I'm sorry there is no door :(</p>
+        <p>(who has time for CSS, am I right)</p>
+        {% if user.is_admin %}
+        <p>CTFkom{HIdoor_h45_4n_IDOR}</p>
+        {% endif %}
+    </body>
+</html>

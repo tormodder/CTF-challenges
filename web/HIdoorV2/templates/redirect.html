@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+</head>
+<body onload="document.getElementById('redirectForm').submit();">
+    <form id="redirectForm" action="/profile" method="post" style="display:none;">
+        <input type="hidden" name="user_id" value="{{ user_id }}">
+    </form>
+</body>
+</html>

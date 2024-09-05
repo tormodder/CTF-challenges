@@ -1,0 +1,1 @@
+I made this cool little web app where you can sign in and the site will say a personalized hello. Isn't it amazing? I want as many users as possible, although I hope there is no way to bypass authentication and access my secret admin user.
